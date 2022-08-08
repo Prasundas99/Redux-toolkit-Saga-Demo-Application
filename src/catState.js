@@ -8,7 +8,7 @@ export const catSlice = createSlice({
         error: null
     },
     reducers: {
-        getCat: (state, action) => {
+        getCat: (state) => {
             state.isloading = true;
             state.error = null;
         },
