@@ -1,16 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const catSlice = createSlice({
-    name: "cat",
+    name: "cats",
     initialState: {
         data:[],
         isloading: false,
         error: null
     },
     reducers: {
-        getCat: (state) => {
+        getCatsFetch: (state) => {
             state.isloading = true;
             state.error = null;
+            state.data = [];
         },
         getCatSuccess: (state, action) => {
             state.isloading = false;
@@ -23,6 +24,6 @@ export const catSlice = createSlice({
     }
 });
 
-export const { getCat, getCatSuccess, getCatError } = catSlice.actions;
+export const { getCatsFetch, getCatSuccess, getCatError } = catSlice.actions;
 
 export default catSlice.reducer;
