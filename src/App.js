@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getCatsFetch} from './catState';
+import {getCatsFetch} from './redux/cat/catState';
 
 
 function App() {

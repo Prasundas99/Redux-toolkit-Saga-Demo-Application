@@ -1,8 +1,7 @@
-import {call, put, takeEvery} from 'redux-saga/effects';
+import {call, put} from 'redux-saga/effects';
 import { getCatError, getCatSuccess } from './catState';
 
-
-function* fetchCatData(){
+export function* fetchCatData(){
     try{
         const response = yield call(() => fetch('https://api.thecatapi.com/v1/breeds'));
         const data = yield response.json();
@@ -11,9 +10,3 @@ function* fetchCatData(){
         yield put(getCatError(error));
     }
 }
-
-function* catSaga(){
- yield takeEvery('cats/getCatsFetch', fetchCatData);   
-}
-
-export default catSaga;
